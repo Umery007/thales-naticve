@@ -1,50 +1,95 @@
-# Welcome to your Expo app 👋
+# 🍰 Doce Inspiração
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo mobile de catálogo de confeitaria construído com **Expo** e **React Native**.
+O app apresenta o cardápio de bolos, tortas e sobremesas em uma interface limpa, com
+tema em tons de rosa/vinho, filtros por categoria e navegação por abas.
 
-## Get started
+## ✨ Funcionalidades
 
-1. Install dependencies
+- **Catálogo de produtos** em grade de dois cards com foto, descrição e preço
+- **Filtros por categoria** (Todos, Bolos, Tortas, Sem Açúcar, Sazonais) em chips horizontais
+- **Favoritar produto** com toque no ícone de coração (estado local)
+- **Botão de adicionar ao carrinho** em cada card
+- **Barra de navegação inferior** com Início, Cardápio, Perfil e Carrinho (com badge de itens)
+- **Top bar** com marca, título e busca
+- **Suporte a dark mode** automático (`userInterfaceStyle: automatic`)
+- **Safe area** respeitada em dispositivos com notch
 
-   ```bash
-   npm install
-   ```
+## 🛠 Tecnologias
 
-2. Start the app
+| Tecnologia | Versão | Uso |
+| --- | --- | --- |
+| [Expo](https://expo.dev) | SDK 54 | Plataforma e tooling |
+| [Expo Router](https://docs.expo.dev/router/introduction/) | 6.x | Roteamento baseado em arquivos |
+| React Native | 0.81 | UI mobile (iOS/Android/Web) |
+| React | 19.1 | UI library |
+| TypeScript | 5.9 | Tipagem estática |
+| expo-image | 3.x | Carregamento otimizado de imagens |
+| @expo/vector-icons (MaterialIcons) | 15.x | Ícones |
+| react-native-safe-area-context | 5.x | Áreas seguras |
+| ESLint + eslint-config-expo | — | Lint |
 
-   ```bash
-   npx expo start
-   ```
+## 📁 Estrutura do projeto
 
-In the output, you'll find options to open the app in a
+```
+.
+├── app/                  # Rotas (Expo Router — file-based routing)
+│   ├── _layout.tsx       # Layout raiz (Stack sem cabeçalho)
+│   └── index.tsx         # Tela inicial (catálogo + navegação)
+├── assets/images/        # Ícones, splash e imagens do app
+├── components/           # Componentes reutilizáveis (themed-text, themed-view…)
+├── constants/            # Constantes e tema
+├── hooks/                # Hooks (use-theme-color, use-color-scheme)
+├── scripts/              # Script de reset do projeto
+├── app.json              # Configuração do Expo
+├── eslint.config.js      # Configuração do Lint
+└── tsconfig.json         # Configuração do TypeScript
+```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🚀 Como rodar
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Pré-requisitos
 
-## Get a fresh project
+- [Node.js](https://nodejs.org/) 20.19 ou superior
+- npm (junto com o Node)
+- O app **Expo Go** no seu celular (Android/iOS) — ou emulador configurado
 
-When you're ready, run:
+### Instalação
+
+```bash
+# 1. Instalar dependências
+npm install
+
+# 2. Iniciar o servidor de desenvolvimento
+npx expo start
+```
+
+No terminal você verá um QR code. Escaneie com o **Expo Go** (Android) ou a
+**câmera do iPhone** (iOS) para abrir o app.
+
+### Outros comandos úteis
+
+```bash
+npm run android   # Abrir direto no emulador/dispositivo Android
+npm run ios       # Abrir direto no simulador iOS
+npm run web       # Rodar no navegador
+npm run lint      # Verificar o código com ESLint
+```
+
+### Resetar o projeto
 
 ```bash
 npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Move o código inicial para `app-example/` e cria um diretório `app/` em branco.
 
-## Learn more
+## 📱 Plataformas suportadas
 
-To learn more about developing your project with Expo, look at the following resources:
+- ✅ Android
+- ✅ iOS
+- ✅ Web
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 📄 Licença
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Projeto privado (`"private": true`).
